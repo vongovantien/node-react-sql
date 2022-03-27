@@ -10,9 +10,13 @@ const addReview = async (req, res) => {
     rating: req.body.rating,
     description: req.body.description,
   };
-
+try {
   const review = await Review.create(data);
   res.status(200).send(review);
+} catch (error) {
+  console.log(error)
+}
+
 };
 
 const getAllReview = async (req, res) => {

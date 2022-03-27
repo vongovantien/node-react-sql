@@ -6,7 +6,7 @@ export let endpoint = {
   updateProduct: (productId) => `/products/updateProduct/${productId}`,
   productDetail: (productId) => `/products/getProductReviews/${productId}`,
   deleteProduct: (productId) => `/products/${productId}`,
-  addReview: (productId) => `/products/addReview/${productId}}`
+  addReview: (productId) => `/products/addReview/${productId}`
 };
 
 export default axios.create({

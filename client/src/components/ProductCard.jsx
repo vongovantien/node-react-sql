@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import avatar from "../public/images/test.jpg"
 const ProductCard = ({ product }) => {
   return (
     <div>
@@ -9,7 +9,7 @@ const ProductCard = ({ product }) => {
         className="shadow-lg m-2 m-3 rounded col-md-6"
         style={{ width: "18rem" }}
       >
-        <Card.Img variant="top" />
+        <Card.Img variant="top" src={product.image ? product.image : avatar} />
         <Card.Body>
           <Card.Title>Title: {product.title}</Card.Title>
           <Card.Title>Price ${product.price}</Card.Title>

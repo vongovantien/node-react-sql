@@ -6,8 +6,8 @@ const ProductDetail = () => {
   const navigate = useNavigate();
   const [product, setProduct] = useState({});
   const [reviews, setReviews] = useState([]);
-  const [rating, setRating] = useState();
-  const [description, setDescription] = useState();
+  const [rating, setRating] = useState('');
+  const [description, setDescription] = useState('');
   let { productId } = useParams();
 
   useEffect(() => {
@@ -43,7 +43,8 @@ const ProductDetail = () => {
     };
     
     try {
-      await api.post(endpoint.addReview(productId), review);
+      await api.post(endpoint["addReview"](productId), review);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
